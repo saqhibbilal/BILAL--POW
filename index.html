@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohammed Bilal | ML Systems Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #f1f1ef;
+        color: #1a1a1a;
+        font-family: 'Space Grotesk', sans-serif;
+        cursor: default;
+      }
+      .font-heading {
+        font-family: 'Quantico', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .font-mono {
+        font-family: 'Space Mono', monospace;
+      }
+      /* Custom scrollbar for that clean look */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1ef;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d1d1cf;
+        border-radius: 10px;
+      }
+      .polaroid {
+        background: white;
+        padding: 12px 12px 40px 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        border: 1px solid #e5e5e5;
+      }
+      .grain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 50;
+        pointer-events: none;
+        opacity: 0.04;
+        background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <div class="grain"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
