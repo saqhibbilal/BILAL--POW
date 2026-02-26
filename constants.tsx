@@ -152,6 +152,17 @@ export const PROJECTS = [
     description: 'Real-time anomaly detection pipeline processing ~6M transactions. Leverages Apache Kafka for ingestion and Spark Structured Streaming for inference using IsolationForest. Visualizes live risk signals via a Streamlit dashboard on GCP.',
     tags: ['Kafka', 'Spark', 'MLOps', 'GCP'],
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800'
+  },
+];
+
+export const EDUCATION = [
+  {
+    institution: 'Osmania University',
+    degree: 'Bachelor of Engineering in Computer Science',
+    location: 'Hyderabad, India',
+    period: '2019 — 2023',
+    coursework: ['Distributed Systems', 'Networking', 'DSA', 'Database Systems', 'Machine Learning'],
+    highlights: ['Systems Programming', 'Algorithm Design', 'Network Architecture']
   }
 ];
 
@@ -160,4 +171,5 @@ export const NAVIGATION = [
   { id: 'work-experience', label: 'Work Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'hackathons', label: 'Hackathons' },
+  { id: 'education', label: 'Education' },
 ];

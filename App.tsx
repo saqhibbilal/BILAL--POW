@@ -1,11 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import { 
-  PROJECTS, 
+import {
+  PROJECTS,
   SOCIAL_LINKS,
   TECH_ARSENAL,
   WORK_EXPERIENCE,
   HACKATHONS,
+  EDUCATION,
   // OPEN_SOURCE,
   NAVIGATION
 } from './constants';
@@ -21,9 +22,9 @@ const ProjectCard: React.FC<{ project: any; badge?: string; onClick: () => void 
   <div className="group relative h-full cursor-pointer" onClick={onClick}>
     <div className="polaroid h-full flex flex-col transition-all duration-300 group-hover:-rotate-1 group-hover:scale-[1.01] hover:shadow-xl">
       <div className="aspect-[16/10] w-full overflow-hidden mb-4 bg-gray-100 border border-gray-100 rounded-sm shrink-0 relative">
-        <img 
-          src={project.image} 
-          alt={project.title} 
+        <img
+          src={project.image}
+          alt={project.title}
           className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
           loading="lazy"
         />
@@ -33,7 +34,7 @@ const ProjectCard: React.FC<{ project: any; badge?: string; onClick: () => void 
           </div>
         )}
       </div>
-      
+
       <div className="flex flex-col flex-grow">
         <div className="flex justify-between items-start mb-2">
           <h3 className="font-heading text-lg font-bold leading-tight">{project.title}</h3>
@@ -41,11 +42,11 @@ const ProjectCard: React.FC<{ project: any; badge?: string; onClick: () => void 
             <ExternalLink size={14} />
           </div>
         </div>
-        
+
         <p className="text-xs opacity-60 line-clamp-4 leading-relaxed mb-4">
           {project.description}
         </p>
-        
+
         <div className="mt-auto flex flex-wrap gap-2">
           {project.tags.map((tag: string) => (
             <span key={tag} className="font-mono text-[8px] px-2 py-0.5 bg-black/5 rounded-full uppercase tracking-wider">
@@ -62,15 +63,15 @@ const Modal: React.FC<{ item: any; badge?: string; onClose: () => void }> = ({ i
   if (!item) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-black/40 backdrop-blur-md transition-all duration-300 animate-in fade-in"
       onClick={onClose}
     >
-      <div 
+      <div
         className="polaroid max-w-3xl w-full max-h-[90vh] overflow-y-auto relative animate-in zoom-in duration-300"
         onClick={(e) => e.stopPropagation()}
       >
-        <button 
+        <button
           onClick={onClose}
           className="absolute top-4 right-4 p-2 bg-black text-white rounded-full hover:scale-110 transition-transform z-10"
         >
@@ -78,9 +79,9 @@ const Modal: React.FC<{ item: any; badge?: string; onClose: () => void }> = ({ i
         </button>
 
         <div className="aspect-[16/9] w-full overflow-hidden mb-6 bg-gray-100 border border-gray-100 rounded-sm relative">
-          <img 
-            src={item.image} 
-            alt={item.title} 
+          <img
+            src={item.image}
+            alt={item.title}
             className="w-full h-full object-cover"
           />
           {badge && (
@@ -169,16 +170,16 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen selection:bg-black selection:text-white pb-20 overflow-x-hidden relative bg-[#f1f1ef]">
-      
+
       {selectedItem && (
-        <Modal 
-          item={selectedItem.item} 
-          badge={selectedItem.badge} 
-          onClose={() => setSelectedItem(null)} 
+        <Modal
+          item={selectedItem.item}
+          badge={selectedItem.badge}
+          onClose={() => setSelectedItem(null)}
         />
       )}
 
-      <nav 
+      <nav
         className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-end gap-1 z-50 group/nav py-4 pr-2"
         aria-label="Table of contents"
       >
@@ -193,17 +194,17 @@ const App: React.FC = () => {
             className="flex items-center gap-4 transition-all duration-300 py-0.5 pl-8 group/item cursor-pointer"
           >
             <span className={`font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300 whitespace-nowrap select-none
-              ${activeSection === section.id 
-                ? 'opacity-100 translate-x-0 font-bold text-black' 
+              ${activeSection === section.id
+                ? 'opacity-100 translate-x-0 font-bold text-black'
                 : 'opacity-0 translate-x-4 pointer-events-none group-hover/nav:opacity-40 group-hover/nav:translate-x-0 group-hover/item:opacity-100 group-hover/item:text-black group-hover/nav:pointer-events-auto'
               }`}>
               {section.label}
             </span>
             <div className={`w-[2px] transition-all duration-500 rounded-full
-              ${activeSection === section.id 
-                ? 'bg-black h-4 scale-x-150' 
+              ${activeSection === section.id
+                ? 'bg-black h-4 scale-x-150'
                 : 'bg-black/10 h-2 group-hover/nav:bg-black/20 group-hover/item:bg-black/60 group-hover/item:h-4'
-              }`} 
+              }`}
             />
           </a>
         ))}
@@ -211,9 +212,9 @@ const App: React.FC = () => {
 
       <div className="fixed bottom-8 left-8 hidden lg:flex flex-col gap-4 z-40">
         {SOCIAL_LINKS.map((link) => (
-          <a 
-            key={link.name} 
-            href={link.url} 
+          <a
+            key={link.name}
+            href={link.url}
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 bg-white/70 backdrop-blur-md border border-black/5 hover:border-black/20 hover:bg-white rounded-full shadow-sm transition-all hover:-translate-y-1 active:scale-95"
@@ -235,7 +236,7 @@ const App: React.FC = () => {
           <p className="font-mono text-xs md:text-xl opacity-70 max-w-3xl leading-relaxed mb-12">
             Software Engineer specializing in ML Systems and Distributed Infrastructure. Bridging the gap between high-performance distributed backends and efficient ML inference artifacts.
           </p>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-8 py-8 border-y border-black/10">
             {[
               { icon: <Layers size={16} />, label: 'Distributed Systems' },
@@ -305,9 +306,9 @@ const App: React.FC = () => {
             <SectionHeader title="Projects" id="projects" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {PROJECTS.map((project) => (
-                <ProjectCard 
-                  key={project.id} 
-                  project={project} 
+                <ProjectCard
+                  key={project.id}
+                  project={project}
                   onClick={() => setSelectedItem({ item: project })}
                 />
               ))}
@@ -319,40 +320,60 @@ const App: React.FC = () => {
             <SectionHeader title="Hackathons" id="hackathons" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {HACKATHONS.map((h) => (
-                <ProjectCard 
-                  key={h.id} 
-                  project={h} 
-                  badge={h.rank} 
+                <ProjectCard
+                  key={h.id}
+                  project={h}
+                  badge={h.rank}
                   onClick={() => setSelectedItem({ item: h, badge: h.rank })}
                 />
               ))}
             </div>
           </section>
 
-          {/* Open Source Section */}
-          {/*
-          <section id="open-source" className="scroll-mt-24">
-            <SectionHeader title="Open Source" id="open-source" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {OPEN_SOURCE.map((os) => (
-                <ProjectCard 
-                  key={os.id} 
-                  project={os} 
-                  badge={os.role} 
-                  onClick={() => setSelectedItem({ item: os, badge: os.role })}
-                />
+          {/* Education Section */}
+          <section id="education" className="scroll-mt-24">
+            <SectionHeader title="Education" id="education" />
+            <div className="space-y-6 md:space-y-8">
+              {EDUCATION.map((edu, i) => (
+                <div key={i} className="polaroid p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 hover:shadow-lg transition-all duration-300">
+                  <div className="md:w-1/3">
+                    <h3 className="font-heading text-lg md:text-xl font-bold">{edu.institution}</h3>
+                    <p className="font-mono text-[10px] md:text-xs uppercase tracking-widest opacity-40 mt-1">{edu.degree}</p>
+                    <p className="font-mono text-[9px] md:text-[10px] mt-4 opacity-60">{edu.period}</p>
+                    <p className="font-mono text-[9px] md:text-[10px] mt-1 opacity-40">{edu.location}</p>
+                  </div>
+                  <div className="md:w-2/3">
+                    <div className="mb-6">
+                      <p className="font-mono text-[10px] uppercase tracking-widest opacity-40 mb-3">Key Coursework</p>
+                      <div className="flex flex-wrap gap-2">
+                        {edu.coursework.map((course) => (
+                          <span key={course} className="font-mono text-[10px] px-2 py-1 bg-black/5 rounded-sm uppercase tracking-wider border border-black/5">
+                            {course}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      {edu.highlights.map((h) => (
+                        <div key={h} className="flex items-center gap-2">
+                          <div className="w-1 h-1 bg-black rounded-full opacity-20" />
+                          <span className="font-mono text-[8px] md:text-[9px] uppercase tracking-widest opacity-60">{h}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </section>
-          */}
         </div>
 
         <footer className="pt-24 pb-16 border-t border-black/10 text-center">
           <div className="flex justify-center gap-6 mb-8 lg:hidden">
             {SOCIAL_LINKS.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.url} 
+              <a
+                key={link.name}
+                href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="opacity-40 hover:opacity-100 transition-opacity"
