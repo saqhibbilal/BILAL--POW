@@ -2,6 +2,10 @@
 import React from 'react';
 import { Github, Linkedin, Twitter, Mail, Code2, Database, Brain, Globe, TrendingUp, Layers, BarChart4, Microscope, Globe2, Terminal, Cpu, Activity, Zap, X } from 'lucide-react';
 
+import ibmImage from './IBM.jpg';
+import qubicImage from './qubic.jpg';
+import nvidiaImage from './nvidia.jpg';
+
 export const SOCIAL_LINKS = [
   { name: 'GitHub', icon: <Github size={20} />, url: 'https://github.com/saqhibbilal' },
   { name: 'LinkedIn', icon: <Linkedin size={20} />, url: 'https://linkedin.com/in/saqhibb' },
@@ -75,7 +79,7 @@ export const HACKATHONS = [
     year: '2025',
     description: 'Built a multi-agent preventive security system for desalination plants. Orchestrated IBM watsonx agents to ingest PLC/sensor data, detect anomalies, and automate incident routing via Twilio and WhatsApp API for real-time compliance reporting.',
     tags: ['IBM watsonx', 'Python', 'Multi-Agent Systems', 'IoT'],
-    image: './IBM.jpg'
+    image: ibmImage
   },
   {
     id: 'h2',
@@ -84,7 +88,7 @@ export const HACKATHONS = [
     year: '2024',
     description: 'Engineered Micro-Qubic, a pay-per-use micropayments engine for digital assets. Leveraged Qubic’s quorum-based consensus for near-instant settlement, providing merchants with automated monetization infrastructure and usage-based pricing models.',
     tags: ['Blockchain', 'Flask', 'Fintech', 'Smart Contracts'],
-    image: './qubic.jpg'
+    image: qubicImage
   },
   {
     id: 'h3',
@@ -93,7 +97,7 @@ export const HACKATHONS = [
     year: '2025',
     description: 'Under guidance Optimized low-level CUDA kernels for NVIDIA Blackwell hardware. Focused on pushing the theoretical limits of NVFP4 precision for maximum throughput, utilizing DGX B200 compute resources for high-performance performance tuning.',
     tags: ['CUDA', 'NVIDIA Blackwell', 'Kernel Optimization', 'HPC'],
-    image: './nvidia.jpg'
+    image: nvidiaImage
   }
 ];
 
