@@ -23,7 +23,7 @@ export const WORK_EXPERIENCE = [
   {
     company: 'Sentiantal',
     role: 'Software Engineer - MLOps',
-    period: 'MAR 2025 — NOV 2025',
+    period: 'MAR 2025 — PRESENT',
     description: 'Leading backend architecture for UpadyAI, an AI-assisted interview platform. Built a resume-aware question generation module using LLMs + Vector DB with prompt versioning and caching. Designed an adaptive pipeline that refines difficulty based on evaluation signals. Implemented LLM guardrails and optimized inference using response truncation to reduce latency.',
     highlights: ['LLM Guardrails', 'Inference Optimization', 'Vector DB Architecture']
   },
